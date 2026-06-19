@@ -2,7 +2,7 @@
 // Architect By DOYTECH
 
 const SECRET_KEY = 'BahrainYouthCitySecret2026!';
-const API_URL = 'http://localhost:9876';
+const API_URL = 'http://localhost:9877';
 
 // Dynamic Educational Landmarks Content
 const RAKKIZ_LANDMARKS = [
