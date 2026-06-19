@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -203,6 +204,52 @@ html, body { background: var(--page-bg); }
   gap: 4mm;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid rgba(17,17,22,0.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.78);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+.lang-switch__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 13mm;
+  padding: 2mm 4mm;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-label);
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.lang-switch__item:hover {
+  color: var(--text-main);
+  background: rgba(17,17,22,0.05);
+}
+
+.lang-switch__item[aria-current="page"] {
+  background: var(--accent-red);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(200,16,46,0.18);
+}
+
+@media print {
+  .lang-switch {
+    display: none !important;
+  }
+}
+
 /* Screen Specific Responsive Adjustments */
 @media screen and (max-width: 800px) {
   html, body {
@@ -373,6 +420,10 @@ html, body { background: var(--page-bg); }
       <div style="width:1px; height:14px; background:rgba(255,255,255,0.15);"></div>
       <span class="label" style="letter-spacing:0.35em; padding-top:1px;">P R O J E C T &nbsp; P R O P O S A L &nbsp; · &nbsp; B A H R A I N &nbsp; Y O U T H &nbsp; C I T Y</span>
     </div>
+    <div class="lang-switch" dir="ltr" aria-label="Language switcher">
+      <span class="lang-switch__item" aria-current="page">EN</span>
+      <a class="lang-switch__item" href="PROPOSAL_ar_light.html" aria-label="Switch to Arabic version">AR</a>
+    </div>
     <span class="label" style="color:rgba(200,16,46,0.7);">JUNE 2026</span>
   </div>
 
@@ -427,7 +478,7 @@ html, body { background: var(--page-bg); }
       <div class="label stats-label">BILINGUAL</div>
     </div>
     <div class="stats-box">
-      <div class="stats-value">30 days</div>
+      <div class="stats-value">6 months</div>
       <div class="label stats-label">SUPPORT</div>
     </div>
   </div>
@@ -731,25 +782,21 @@ html, body { background: var(--page-bg); }
     </div>
   </div>
 
-  <!-- terms -->
+  <!-- payment terms -->
   <div style="border-top:1px solid rgba(255,255,255,0.07); padding-top:5mm; margin-bottom:auto;">
-    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm;">T E R M S &nbsp; &amp; &nbsp; D E L I V E R Y</div>
-    <div class="terms-grid">
+    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm;">P A Y M E N T &nbsp; T E R M S</div>
+    <div class="terms-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div>
-        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">T I M E L I N E</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">Ready for immediate installation upon acceptance.</p>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">A D V A N C E</div>
+        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">50% upfront to initialize the project.</p>
       </div>
       <div>
-        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">D E L I V E R A B L E S</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">Complete application, installation guide and setup script.</p>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">D E L I V E R Y</div>
+        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">Delivery within 20 days from the advance payment.</p>
       </div>
       <div>
         <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">S U P P O R T</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">30 days of technical support after installation at no extra cost.</p>
-      </div>
-      <div>
-        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">O W N E R S H I P</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">All files transfer fully to the client upon payment.</p>
+        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">6 months of technical support after delivery.</p>
       </div>
     </div>
   </div>

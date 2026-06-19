@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <script src="./support.js"></script>
 </head>
 <body dir="rtl">
@@ -206,6 +207,52 @@ html, body { background: var(--page-bg); }
   gap: 4mm;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid rgba(17,17,22,0.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.78);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+.lang-switch__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 13mm;
+  padding: 2mm 4mm;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-label);
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.lang-switch__item:hover {
+  color: var(--text-main);
+  background: rgba(17,17,22,0.05);
+}
+
+.lang-switch__item[aria-current="page"] {
+  background: var(--accent-red);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(200,16,46,0.18);
+}
+
+@media print {
+  .lang-switch {
+    display: none !important;
+  }
+}
+
 /* Screen Specific Responsive Adjustments */
 @media screen and (max-width: 800px) {
   html, body {
@@ -377,6 +424,10 @@ html, body { background: var(--page-bg); }
       <span class="label" style="letter-spacing:0.35em; padding-top:1px;">مَشْرُوع &nbsp; عَرْضِيَّة &nbsp; · &nbsp; بَحْرين &nbsp; مَدِيْنَة &nbsp;
 الشَابّات</span>
     </div>
+    <div class="lang-switch" dir="ltr" aria-label="Language switcher">
+      <span class="lang-switch__item" aria-current="page">AR</span>
+      <a class="lang-switch__item" href="PROPOSAL_light.html" aria-label="Switch to English version">EN</a>
+    </div>
     <span class="label" style="color:#c8102e;">يونيو 2026</span>
   </div>
 
@@ -434,7 +485,7 @@ html, body { background: var(--page-bg); }
       <div class="label stats-label">ثنائي اللغة</div>
     </div>
     <div class="stats-box">
-      <div class="stats-value">30 يومًا</div>
+      <div class="stats-value">6 أشهر</div>
       <div class="label stats-label">الدعم</div>
     </div>
   </div>
@@ -811,27 +862,19 @@ letter-spacing:0.04em;">1,200.00 د.ب</td>
 
   <!-- terms -->
   <div style="border-top:1px solid rgba(17,17,22,0.08); padding-top:5mm; margin-bottom:auto;">
-    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm;">الشروط &nbsp; و&nbsp; التسليم</div>
-    <div class="terms-grid">
+    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm;">شروط الدفع</div>
+    <div class="terms-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div style="text-align:right;">
-        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(17,17,22,0.45);">الجدول الزمني</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(17,17,22,0.72); line-height:1.55;">جاهز للتثبيت الفوري عند
-القبول.</p>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(17,17,22,0.45);">دفعة مقدمة</div>
+        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(17,17,22,0.72); line-height:1.7; direction:rtl;">50% دفعة مقدمة لبدء المشروع.</p>
       </div>
       <div style="text-align:right;">
-        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(17,17,22,0.45);">المُسَلَّمَات</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(17,17,22,0.72); line-height:1.55;">التطبيق الكامل، ودليل
-التثبيت، وسكريبت الإعداد.</p>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(17,17,22,0.45);">التسليم</div>
+        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(17,17,22,0.72); line-height:1.7; direction:rtl;">خلال 20 يومًا من الدفعة المقدمة.</p>
       </div>
       <div style="text-align:right;">
         <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(17,17,22,0.45);">الدعم</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(17,17,22,0.72); line-height:1.55;">30 يومًا من الدعم الفني بعد
-التثبيت دون تكلفة إضافية.</p>
-      </div>
-      <div style="text-align:right;">
-        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(17,17,22,0.45);">ملكية المالك</div>
-        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(17,17,22,0.72); line-height:1.55;">يتم نقل جميع الملفات
-بالكامل إلى العميل عند الدفع.</p>
+        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(17,17,22,0.72); line-height:1.7; direction:rtl;">6 أشهر من الدعم الفني بعد التسليم.</p>
       </div>
     </div>
   </div>
