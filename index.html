@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<meta http-equiv="refresh" content="0; url=PROPOSAL_ar_light.html">
 <script src="./support.js"></script>
 </head>
 <body dir="rtl">
@@ -475,7 +474,7 @@ html, body { font-family: 'Tajawal', sans-serif; direction: rtl; }
       <div class="label" style="margin-top:4px; font-size:9px; letter-spacing:0.1em;">ثنائي اللغة</div>
     </div>
     <div style="padding:8mm 9mm; padding-left:20mm;">
-      <div style="font-family:'Tajawal',sans-serif; font-size:30px; font-weight:300; color:#f0ebe1; letter-spacing:-0.01em;">30 يومًا</div>
+      <div style="font-family:'Tajawal',sans-serif; font-size:30px; font-weight:300; color:#f0ebe1; letter-spacing:-0.01em;">6 أشهر</div>
       <div class="label" style="margin-top:4px; font-size:9px; letter-spacing:0.1em;">الدعم</div>
     </div>
   </div>
@@ -796,25 +795,21 @@ html, body { font-family: 'Tajawal', sans-serif; direction: rtl; }
     </div>
   </div>
 
-  <!-- terms -->
+  <!-- payment terms -->
   <div style="border-top:1px solid rgba(255,255,255,0.07); padding-top:6mm; margin-bottom:auto;">
-    <div class="label" style="font-size:10px; letter-spacing:0.15em; margin-bottom:5mm;">الشروط &nbsp; و&nbsp; التسليم</div>
-    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:5mm; direction:rtl;">
+    <div class="label" style="font-size:10px; letter-spacing:0.15em; margin-bottom:5mm;">شروط الدفع</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:5mm; direction:rtl;">
       <div style="text-align:right;">
-        <div class="label" style="font-size:9px; letter-spacing:0.1em; margin-bottom:2.5mm; color:rgba(240,235,225,0.4);">الجدول الزمني</div>
-        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(240,235,225,0.72); line-height:1.7; direction:rtl;">جاهز للتثبيت الفوري عند القبول.</p>
+        <div class="label" style="font-size:9px; letter-spacing:0.1em; margin-bottom:2.5mm; color:rgba(240,235,225,0.4);">دفعة مقدمة</div>
+        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(240,235,225,0.72); line-height:1.7; direction:rtl;">50% دفعة مقدمة لبدء المشروع.</p>
       </div>
       <div style="text-align:right;">
-        <div class="label" style="font-size:9px; letter-spacing:0.1em; margin-bottom:2.5mm; color:rgba(240,235,225,0.4);">المُسَلَّمَات</div>
-        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(240,235,225,0.72); line-height:1.7; direction:rtl;">التطبيق الكامل، ودليل التثبيت، وسكريبت الإعداد.</p>
+        <div class="label" style="font-size:9px; letter-spacing:0.1em; margin-bottom:2.5mm; color:rgba(240,235,225,0.4);">التسليم</div>
+        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(240,235,225,0.72); line-height:1.7; direction:rtl;">خلال 20 يومًا من الدفعة المقدمة.</p>
       </div>
       <div style="text-align:right;">
         <div class="label" style="font-size:9px; letter-spacing:0.1em; margin-bottom:2.5mm; color:rgba(240,235,225,0.4);">الدعم</div>
-        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(240,235,225,0.72); line-height:1.7; direction:rtl;">30 يومًا من الدعم الفني بعد التثبيت دون تكلفة إضافية.</p>
-      </div>
-      <div style="text-align:right;">
-        <div class="label" style="font-size:9px; letter-spacing:0.1em; margin-bottom:2.5mm; color:rgba(240,235,225,0.4);">ملكية المالك</div>
-        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(240,235,225,0.72); line-height:1.7; direction:rtl;">يتم نقل جميع الملفات بالكامل إلى العميل عند الدفع.</p>
+        <p style="font-family:'Tajawal',sans-serif; font-size:13px; font-weight:300; color:rgba(240,235,225,0.72); line-height:1.7; direction:rtl;">6 أشهر من الدعم الفني بعد التسليم.</p>
       </div>
     </div>
   </div>
@@ -834,22 +829,34 @@ html, body { font-family: 'Tajawal', sans-serif; direction: rtl; }
 </div>
 </x-dc>
 
-<!-- Save to PDF button — hidden in print -->
-<button id="pdf-btn" onclick="window.print()" title="حفظ كـ PDF">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-    <polyline points="7 10 12 15 17 10"/>
-    <line x1="12" y1="15" x2="12" y2="3"/>
-  </svg>
-  حفظ كـ PDF
-</button>
+<!-- Floating controls — hidden in print -->
+<div id="floating-controls">
+  <button id="theme-btn" title="تبديل الوضع">
+    <span class="theme-icon">☀️</span>
+  </button>
+  <button id="pdf-btn" onclick="window.print()" title="حفظ كـ PDF">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    حفظ كـ PDF
+  </button>
+</div>
 
 <style>
-#pdf-btn {
+/* ── Floating controls ── */
+#floating-controls {
   position: fixed;
   bottom: 28px;
   left: 28px;
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  direction: rtl;
+}
+#pdf-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -864,14 +871,100 @@ html, body { font-family: 'Tajawal', sans-serif; direction: rtl; }
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(200,16,46,0.45);
   transition: background 0.2s, transform 0.15s;
-  direction: rtl;
 }
 #pdf-btn:hover { background: #a50d25; transform: translateY(-1px); }
 #pdf-btn:active { transform: translateY(0); }
+
+#theme-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s, transform 0.15s;
+}
+#theme-btn:hover { background: rgba(255,255,255,0.18); transform: translateY(-1px); }
+#theme-btn:active { transform: translateY(0); }
+
 @media print {
-  #pdf-btn { display: none !important; }
+  #floating-controls { display: none !important; }
   @page { size: A4; margin: 0; }
 }
+
+/* ── Light mode overrides ── */
+html.light-mode body,
+html.light-mode .page { background: #fbfaf7 !important; }
+
+html.light-mode .page,
+html.light-mode .page * { color: #111116 !important; }
+
+/* Restore red accents */
+html.light-mode .page [style*="rgba(200,16,46"] { color: rgba(200,16,46,0.88) !important; }
+html.light-mode .page [style*="color:#c8102e"] { color: #c8102e !important; }
+html.light-mode .page [style*="background:#c8102e"] { background: #c8102e !important; }
+html.light-mode .page [style*="background:rgba(200,16,46"] { background: rgba(200,16,46,0.5) !important; }
+
+/* Muted label text */
+html.light-mode .label,
+html.light-mode .page .label { color: rgba(17,17,22,0.45) !important; }
+
+/* Sadu strips — subtle in light */
+html.light-mode .sadu-strip { opacity: 0.12 !important; filter: invert(0.85) sepia(0.3) !important; }
+html.light-mode .sadu-strip-left { opacity: 0.07 !important; filter: invert(0.85) sepia(0.3) !important; }
+
+/* Borders */
+html.light-mode .page [style*="rgba(255,255,255,0.07)"],
+html.light-mode .page [style*="rgba(255,255,255,0.12)"],
+html.light-mode .page [style*="rgba(255,255,255,0.05)"] { border-color: rgba(17,17,22,0.09) !important; }
+html.light-mode .page [style*="background:rgba(255,255,255,0.02)"] { background: rgba(17,17,22,0.02) !important; }
+html.light-mode .page [style*="background:rgba(255,255,255,0.12)"] { background: rgba(17,17,22,0.12) !important; }
+html.light-mode .page [style*="1px solid rgba(255,255,255"] { border-color: rgba(17,17,22,0.09) !important; }
+
+/* Large ghost number */
+html.light-mode .page [style*="rgba(200,16,46,0.15)"] { color: rgba(200,16,46,0.10) !important; }
+
+/* Logos */
+html.light-mode img[src*="doy-tech-logo"] { filter: invert(1) !important; }
+
+/* theme button adapts */
+html.light-mode #theme-btn {
+  background: rgba(17,17,22,0.08) !important;
+  border-color: rgba(17,17,22,0.15) !important;
+}
+html.light-mode #pdf-btn { color: #f0ebe1 !important; }
 </style>
+
+<script>
+(function() {
+  var html = document.documentElement;
+  var btn = document.getElementById('theme-btn');
+  var icon = btn.querySelector('.theme-icon');
+
+  function applyTheme(isLight) {
+    if (isLight) {
+      html.classList.add('light-mode');
+      icon.textContent = '🌙';
+    } else {
+      html.classList.remove('light-mode');
+      icon.textContent = '☀️';
+    }
+  }
+
+  // Restore saved preference
+  applyTheme(localStorage.getItem('byc-theme') === 'light');
+
+  btn.addEventListener('click', function() {
+    var isLight = !html.classList.contains('light-mode');
+    applyTheme(isLight);
+    localStorage.setItem('byc-theme', isLight ? 'light' : 'dark');
+  });
+})();
+</script>
 </body>
 </html>
