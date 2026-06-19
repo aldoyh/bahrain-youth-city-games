@@ -3,690 +3,481 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahrain Youth City Proposal | DOYTECH</title>
+    <title>Bahrain Youth City Platform | DOYTECH</title>
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS (via CDN for single-file deployment) -->
+    <!-- Tailwind CSS (for quick layout elements) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Tailwind Config & Custom CSS -->
+    
+    <!-- Custom Style System -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config to extend variables -->
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['"DM Sans"', 'sans-serif'],
-                        arabic: ['"Tajawal"', 'sans-serif'],
-                    },
                     colors: {
-                        border: "hsl(var(--border))",
-                        input: "hsl(var(--input))",
-                        ring: "hsl(var(--ring))",
-                        background: "hsl(var(--background))",
-                        foreground: "hsl(var(--foreground))",
-                        primary: {
-                            DEFAULT: "hsl(var(--primary))",
-                            foreground: "hsl(var(--primary-foreground))",
-                        },
-                        secondary: {
-                            DEFAULT: "hsl(var(--secondary))",
-                            foreground: "hsl(var(--secondary-foreground))",
-                        },
-                        muted: {
-                            DEFAULT: "hsl(var(--muted))",
-                            foreground: "hsl(var(--muted-foreground))",
-                        },
-                        accent: {
-                            DEFAULT: "hsl(var(--accent))",
-                            foreground: "hsl(var(--accent-foreground))",
-                        },
-                        card: {
-                            DEFAULT: "hsl(var(--card))",
-                            foreground: "hsl(var(--card-foreground))",
-                        },
+                        bahrain: '#c8102e',
+                        gold: '#d4af37',
                     }
                 }
             }
         }
     </script>
-
-    <style type="text/tailwindcss">
-        @layer base {
-            :root {
-                --background: 0 0% 100%;
-                --foreground: 240 10% 3.9%;
-                --card: 0 0% 100%;
-                --card-foreground: 240 10% 3.9%;
-                --popover: 0 0% 100%;
-                --popover-foreground: 240 10% 3.9%;
-                --primary: 348 83% 47%; /* Bahrain Red */
-                --primary-foreground: 0 0% 98%;
-                --secondary: 240 4.8% 95.9%;
-                --secondary-foreground: 240 5.9% 10%;
-                --muted: 240 4.8% 95.9%;
-                --muted-foreground: 240 3.8% 46.1%;
-                --accent: 240 4.8% 95.9%;
-                --accent-foreground: 240 5.9% 10%;
-                --border: 240 5.9% 90%;
-                --ring: 348 83% 47%;
-                --radius: 0.75rem;
-            }
-
-            .dark {
-                --background: 240 10% 3.9%;
-                --foreground: 0 0% 98%;
-                --card: 240 10% 3.9%;
-                --card-foreground: 0 0% 98%;
-                --popover: 240 10% 3.9%;
-                --popover-foreground: 0 0% 98%;
-                --primary: 348 83% 47%;
-                --primary-foreground: 0 0% 98%;
-                --secondary: 240 3.7% 15.9%;
-                --secondary-foreground: 0 0% 98%;
-                --muted: 240 3.7% 15.9%;
-                --muted-foreground: 240 5% 64.9%;
-                --accent: 240 3.7% 15.9%;
-                --accent-foreground: 0 0% 98%;
-                --border: 240 3.7% 15.9%;
-                --ring: 348 83% 47%;
-            }
-        }
-
-        @layer utilities {
-            .glass {
-                @apply bg-background/80 backdrop-blur-md border border-border shadow-sm;
-            }
-        }
-
-        html { scroll-behavior: smooth; }
-        body { @apply bg-background text-foreground transition-colors duration-300; }
-        
-        /* Typography overrides based on language */
-        :root[lang="ar"] body { font-family: 'Tajawal', sans-serif; }
-        :root[lang="en"] body { font-family: 'DM Sans', sans-serif; }
-
-        /* Bilingual Toggle Logic */
-        :root[lang="ar"] .en { display: none !important; }
-        :root[lang="en"] .ar { display: none !important; }
-
-        /* Background Pattern */
-        .bg-pattern {
-            background-image: radial-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-
-        /* Print Styles */
-        @media print {
-            body { background: white !important; color: black !important; }
-            .no-print { display: none !important; }
-            .print-break { page-break-before: always; }
-            .glass { background: transparent !important; border: none !important; box-shadow: none !important; }
-            * { color: black !important; border-color: #ddd !important; }
-            .shadow-xl, .shadow-2xl { box-shadow: none !important; }
-            img { border: 1px solid #ddd !important; }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
-<body class="min-h-screen relative bg-pattern">
+<body class="bg-grid relative bg-[#0b0b10]">
+    
+    <!-- Background Glow Blobs -->
+    <div class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full gradient-radial pointer-events-none z-0"></div>
+    <div class="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] rounded-full gradient-radial pointer-events-none z-0 opacity-70"></div>
 
-    <!-- Floating Control Panel -->
-    <div class="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none no-print">
-        <div class="glass pointer-events-auto rounded-full px-4 py-2 flex items-center gap-2">
-            <!-- Theme Toggle -->
-            <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-secondary transition-colors" title="Toggle Theme">
-                <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-yellow-400"></i>
-                <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-slate-800"></i>
-            </button>
-            <div class="w-px h-6 bg-border mx-1"></div>
-            <!-- Language Toggle -->
-            <button onclick="toggleLanguage()" class="p-2 px-3 rounded-full hover:bg-secondary transition-colors font-medium text-sm flex items-center gap-2">
-                <i data-lucide="languages" class="w-4 h-4"></i>
-                <span class="ar">English</span>
-                <span class="en">عربي</span>
-            </button>
-            <div class="w-px h-6 bg-border mx-1"></div>
-            <!-- Print Button -->
-            <button onclick="window.print()" class="p-2 rounded-full hover:bg-secondary transition-colors" title="Print Proposal">
-                <i data-lucide="printer" class="w-5 h-5"></i>
+    <!-- ═══════════════════════════════════════════ COMMON HEADER ═══════════════════════════════════════════ -->
+    <header id="common-header" class="hidden absolute top-0 left-0 w-full h-[100px] px-12 flex items-center justify-between z-50 no-print">
+        <div class="flex items-center gap-6">
+            <img src="doy-tech-logo-white_144.png" alt="DOYTECH" class="h-10 opacity-90 drop-shadow-md">
+            <div class="w-px h-6 bg-white/20"></div>
+            <h2 id="header-game-title" class="text-lg font-medium text-white/80 tracking-wide">
+                <!-- Set dynamically -->
+            </h2>
+        </div>
+
+        <div class="flex items-center gap-6">
+            <!-- Score & Timer Indicators -->
+            <div id="game-indicators" class="hidden flex items-center gap-6 mr-6">
+                <!-- Score Indicator -->
+                <div class="glass-panel px-6 py-2 flex items-center gap-3 border-white/10">
+                    <i data-lucide="award" class="w-5 h-5 text-gold"></i>
+                    <div class="flex flex-col">
+                        <span class="text-[9px] text-white/40 uppercase tracking-widest ar">النتيجة</span>
+                        <span class="text-[9px] text-white/40 uppercase tracking-widest en hidden">Score</span>
+                        <span id="indicator-score" class="text-lg font-bold text-white leading-none">0</span>
+                    </div>
+                </div>
+                <!-- Timer Indicator -->
+                <div class="glass-panel px-6 py-2 flex items-center gap-3 border-white/10">
+                    <i data-lucide="timer" class="w-5 h-5 text-bahrain"></i>
+                    <div class="flex flex-col">
+                        <span class="text-[9px] text-white/40 uppercase tracking-widest ar">الوقت</span>
+                        <span class="text-[9px] text-white/40 uppercase tracking-widest en hidden">Time</span>
+                        <span id="indicator-timer" class="text-lg font-bold text-white leading-none">0s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Controls -->
+            <div class="glass-panel px-4 py-2 flex items-center gap-2 border-white/10 pointer-events-auto">
+                <!-- Mute/Unmute Toggle -->
+                <button onclick="app.toggleMute()" class="p-2 rounded-lg hover:bg-white/5 transition-colors" title="Toggle Sound">
+                    <i id="volume-icon-on" data-lucide="volume-2" class="w-5 h-5 text-white/85"></i>
+                    <i id="volume-icon-off" data-lucide="volume-x" class="w-5 h-5 text-white/40 hidden"></i>
+                </button>
+                <div class="w-px h-5 bg-white/10 mx-1"></div>
+                <!-- Language Toggle -->
+                <button onclick="app.toggleLanguage()" class="px-3 py-1 rounded-lg hover:bg-white/5 text-sm font-semibold text-white/80 transition-colors">
+                    <span class="ar">English</span>
+                    <span class="en hidden">عربي</span>
+                </button>
+                <div id="header-exit-divider" class="w-px h-5 bg-white/10 mx-1 hidden"></div>
+                <!-- Exit Button -->
+                <button id="header-btn-exit" onclick="app.confirmExit()" class="hidden px-4 py-1.5 bg-bahrain/20 hover:bg-bahrain/35 border border-bahrain/30 rounded-lg text-xs font-bold text-white tracking-widest uppercase transition-colors">
+                    <span class="ar">خروج</span>
+                    <span class="en hidden">Exit</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════ COVER SCREEN ═══════════════════════════════════════════ -->
+    <section id="screen-cover" class="screen-section active bg-grid justify-center items-center">
+        <div class="text-center flex flex-col items-center">
+            <!-- Center Branding -->
+            <img src="doy-tech-logo-white_144.png" alt="DOYTECH" class="h-24 opacity-95 drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)] mb-12 animate-bounce">
+            
+            <div class="glass-panel glass-panel-glow border-white/10 px-20 py-16 max-w-2xl text-center flex flex-col items-center relative overflow-hidden">
+                <span class="inline-block px-4 py-1.5 bg-bahrain/15 border border-bahrain/25 text-bahrain text-xs font-bold tracking-widest rounded-full mb-8 uppercase">
+                    <span class="ar">مدينة شباب 2030 - مملكة البحرين</span>
+                    <span class="en hidden">Bahrain Youth City 2030</span>
+                </span>
+                
+                <h1 class="text-5xl font-light text-white tracking-tight mb-8">
+                    <span class="ar block">منصة الألعاب التفاعلية</span>
+                    <span class="en hidden block">Interactive Games Platform</span>
+                </h1>
+                
+                <p class="text-white/60 text-lg leading-relaxed max-w-md mb-12">
+                    <span class="ar">ثلاث ألعاب تفاعلية غامرة تحتفي بمعالم الوطن وقيمه الوطنية وجغرافيته</span>
+                    <span class="en hidden">Three immersive educational games celebrating Bahrain's landmarks, values, and geography</span>
+                </p>
+
+                <!-- Touch target button that triggers starting -->
+                <button onclick="app.transitionTo('menu')" class="btn-primary px-12 py-5 text-lg tracking-widest uppercase flex items-center gap-3">
+                    <span class="ar">المس للبدء</span>
+                    <span class="en hidden">Touch to Start</span>
+                    <i data-lucide="play" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <p class="text-white/30 text-xs mt-12 tracking-wide font-medium">DOYTECH &middot; Senior Broadcast IT Standards</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ MAIN MENU ═══════════════════════════════════════════ -->
+    <section id="screen-menu" class="screen-section bg-grid pt-[150px] px-16">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-semibold text-white tracking-tight">
+                <span class="ar">اختر لعبة للبدء</span>
+                <span class="en hidden">Select a Game to Start</span>
+            </h1>
+            <p class="text-white/50 text-sm mt-2">
+                <span class="ar">اختبر معلوماتك وتركيزك ومهاراتك في معالم وقيم البحرين</span>
+                <span class="en hidden">Test your knowledge, focus, and skills with Bahraini landmarks and values</span>
+            </p>
+        </div>
+
+        <div class="flex justify-center gap-10 mt-6">
+            <!-- Game Card 1 -->
+            <div class="glass-panel border-white/5 p-6 w-[440px] flex flex-col justify-between hover:border-bahrain/40 transition-all duration-300 group shadow-lg">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl h-[240px] mb-6 border border-white/5">
+                        <img src="game1_spot_difference.png" alt="Rakkiz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-bahrain text-white text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">GAME 01</div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">
+                        <span class="ar">لعبة ركّز</span>
+                        <span class="en hidden">Spot the Difference</span>
+                    </h2>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">
+                        <span class="ar">قارن بين صورتين لمعالم البحرين واكتشف الاختلاف الفني المخفي بينهما قبل انتهاء الوقت!</span>
+                        <span class="en hidden">Compare two versions of Bahraini landmark photos and spot the difference before time runs out!</span>
+                    </p>
+                </div>
+                
+                <!-- Setup & Play actions -->
+                <div class="border-t border-white/5 pt-6">
+                    <!-- Difficulty toggle for Game 1 -->
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs text-white/40"><span class="ar">مستوى الصعوبة</span><span class="en hidden">Difficulty</span></span>
+                        <div class="flex bg-white/5 rounded-lg p-0.5 border border-white/5">
+                            <button id="g1-diff-easy" onclick="app.setDifficulty('rakkiz', 'easy')" class="px-4 py-1 text-xs rounded-md bg-bahrain text-white font-bold transition-all">
+                                <span class="ar">سهل</span><span class="en hidden">Easy</span>
+                            </button>
+                            <button id="g1-diff-hard" onclick="app.setDifficulty('rakkiz', 'hard')" class="px-4 py-1 text-xs rounded-md text-white/50 font-bold transition-all">
+                                <span class="ar">صعب</span><span class="en hidden">Hard</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button onclick="app.startGame('rakkiz')" class="btn-primary w-full py-4 text-sm tracking-widest uppercase">
+                        <span class="ar">العب الآن</span><span class="en hidden">Play Now</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Card 2 -->
+            <div class="glass-panel border-white/5 p-6 w-[440px] flex flex-col justify-between hover:border-bahrain/40 transition-all duration-300 group shadow-lg">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl h-[240px] mb-6 border border-white/5">
+                        <img src="game2_memory_game.png" alt="Memory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-bahrain text-white text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">GAME 02</div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">
+                        <span class="ar">بطاقات القيم الوطنية</span>
+                        <span class="en hidden">National Values Memory</span>
+                    </h2>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">
+                        <span class="ar">احفظ مواقع البطاقات ثم طابق أزواج القيم الوطنية الستة لمملكة البحرين في شبكة الذاكرة.</span>
+                        <span class="en hidden">Memorize card positions and match pairs representing Bahrain's six proud national values in the grid.</span>
+                    </p>
+                </div>
+                
+                <div class="border-t border-white/5 pt-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs text-white/40"><span class="ar">مستوى الصعوبة</span><span class="en hidden">Difficulty</span></span>
+                        <span class="text-xs text-gold font-bold"><span class="ar">افتراضي (16 بطاقة)</span><span class="en hidden">Standard (16 Cards)</span></span>
+                    </div>
+                    <button onclick="app.startGame('memory')" class="btn-primary w-full py-4 text-sm tracking-widest uppercase">
+                        <span class="ar">العب الآن</span><span class="en hidden">Play Now</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Game Card 3 -->
+            <div class="glass-panel border-white/5 p-6 w-[440px] flex flex-col justify-between hover:border-bahrain/40 transition-all duration-300 group shadow-lg">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl h-[240px] mb-6 border border-white/5">
+                        <img src="game3_landmark_mapping.png" alt="Mapping" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-bahrain text-white text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">GAME 03</div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">
+                        <span class="ar">اكتشف معالم بحريننا</span>
+                        <span class="en hidden">Landmark Mapping</span>
+                    </h2>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">
+                        <span class="ar">اسحب بطاقات المعالم الشهيرة وضعها في موقعها الجغرافي الدقيق على الخريطة التفاعلية.</span>
+                        <span class="en hidden">Drag high-profile landmark cards and drop them onto their correct geographical dropzones on the map.</span>
+                    </p>
+                </div>
+                
+                <div class="border-t border-white/5 pt-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs text-white/40"><span class="ar">مستوى الصعوبة</span><span class="en hidden">Difficulty</span></span>
+                        <div class="flex bg-white/5 rounded-lg p-0.5 border border-white/5">
+                            <button id="g3-diff-easy" onclick="app.setDifficulty('mapping', 'easy')" class="px-4 py-1 text-xs rounded-md bg-bahrain text-white font-bold transition-all">
+                                <span class="ar">سهل (3 معالم)</span><span class="en hidden">Easy (3 Items)</span>
+                            </button>
+                            <button id="g3-diff-hard" onclick="app.setDifficulty('mapping', 'hard')" class="px-4 py-1 text-xs rounded-md text-white/50 font-bold transition-all">
+                                <span class="ar">صعب (5 معالم)</span><span class="en hidden">Hard (5 Items)</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button onclick="app.startGame('mapping')" class="btn-primary w-full py-4 text-sm tracking-widest uppercase">
+                        <span class="ar">العب الآن</span><span class="en hidden">Play Now</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ GAME 1: SPOT THE DIFFERENCE ═══════════════════════════════════════════ -->
+    <section id="screen-rakkiz" class="screen-section bg-grid pt-[130px] px-12 justify-center">
+        <!-- Rakkiz Playground -->
+        <div class="flex items-center justify-center gap-10">
+            <!-- Left Panel (Modified with hidden touch hotspot targets) -->
+            <div class="flex flex-col items-center">
+                <span class="text-xs text-white/50 font-semibold mb-3 tracking-widest uppercase">
+                    <span class="ar">الصورة المعدلة (ابحث عن الاختلاف هنا)</span>
+                    <span class="en hidden">Modified Image (Touch Differing Spot Here)</span>
+                </span>
+                <div id="rakkiz-modified-container" class="rakkiz-img-container">
+                    <img id="rakkiz-modified-img" src="" alt="Modified View" class="w-full h-full object-cover">
+                    <!-- Hotspots will be added dynamically in JS -->
+                </div>
+            </div>
+
+            <!-- Right Panel (Original reference) -->
+            <div class="flex flex-col items-center">
+                <span class="text-xs text-white/50 font-semibold mb-3 tracking-widest uppercase">
+                    <span class="ar">الصورة الأصلية (مرجع المطابقة)</span>
+                    <span class="en hidden">Original Image (Reference View)</span>
+                </span>
+                <div class="rakkiz-img-container">
+                    <img id="rakkiz-original-img" src="" alt="Original View" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ GAME 2: MEMORY VALUES ═══════════════════════════════════════════ -->
+    <section id="screen-memory" class="screen-section bg-grid pt-[140px] px-16 justify-center">
+        <div class="flex gap-16 justify-center items-start">
+            <!-- Left Side Card Matching Grid -->
+            <div class="flex flex-col items-center">
+                <div id="memory-board" class="memory-grid">
+                    <!-- Card slots generated dynamically by app.js -->
+                </div>
+            </div>
+
+            <!-- Right Side Live Leaderboard Display panel -->
+            <div class="glass-panel border-white/5 w-[420px] p-6 flex flex-col h-[770px]">
+                <div class="flex items-center gap-3 border-b border-white/5 pb-4 mb-6">
+                    <i data-lucide="trophy" class="w-6 h-6 text-gold"></i>
+                    <h3 class="text-lg font-bold text-white tracking-wide">
+                        <span class="ar">المتصدرون المؤقتون</span>
+                        <span class="en hidden">Live Leaderboard</span>
+                    </h3>
+                </div>
+                <div id="memory-sidebar-leaderboard" class="flex-1 flex flex-col gap-4 overflow-y-auto pr-1">
+                    <!-- Scores list filled dynamically in app.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ GAME 3: LANDMARK MAPPING ═══════════════════════════════════════════ -->
+    <section id="screen-mapping" class="screen-section bg-grid pt-[130px] px-12 justify-center">
+        <div class="flex gap-8 justify-center items-start">
+            <!-- Left Panel: Responsive Interactive Vector map of Bahrain -->
+            <div class="mapping-map-wrapper">
+                <!-- Inline SVG Map Design representing coastline of Bahrain -->
+                <svg id="bahrain-svg-map" class="w-full h-full opacity-85" viewBox="0 0 1100 700" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Glow filters -->
+                        <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="10" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                    <!-- Background Ocean color -->
+                    <rect width="1100" height="700" fill="#0f111a"/>
+                    <!-- Bahrain Main Island coordinates outline -->
+                    <path d="M 520,180 C 560,180 570,220 570,260 C 570,300 580,360 590,400 C 600,450 610,500 590,560 C 570,620 520,650 490,620 C 470,600 460,550 450,500 C 440,450 430,350 440,280 C 450,230 480,180 520,180 Z" fill="#181a28" stroke="rgba(255,255,255,0.06)" stroke-width="3" />
+                    <!-- Muharraq Island -->
+                    <path d="M 580,110 C 610,90 640,110 630,140 C 610,170 570,160 560,130 C 550,110 570,110 580,110 Z" fill="#181a28" stroke="rgba(255,255,255,0.06)" stroke-width="3" />
+                    <!-- Sitra Island -->
+                    <path d="M 590,260 C 610,260 615,290 610,320 C 600,350 585,340 580,310 C 575,280 580,260 590,260 Z" fill="#181a28" stroke="rgba(255,255,255,0.06)" stroke-width="3" />
+                    <!-- King Fahd Causeway line path -->
+                    <path d="M 440,280 L 150,220" stroke="rgba(255,255,255,0.12)" stroke-width="4" stroke-dasharray="6,6" />
+                </svg>
+                <!-- Targets/Drop Zones overlayed absolutely by app.js -->
+                <div id="mapping-targets-container"></div>
+            </div>
+
+            <!-- Right Panel: Inventory sidebar of chips to drag -->
+            <div class="glass-panel border-white/5 w-[380px] p-6 flex flex-col h-[700px] justify-between">
+                <div>
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4 mb-6">
+                        <i data-lucide="layers" class="w-5 h-5 text-gold"></i>
+                        <h3 class="text-md font-bold text-white tracking-wide">
+                            <span class="ar">اسحب المعالم هنا</span>
+                            <span class="en hidden">Drag Landmarks</span>
+                        </h3>
+                    </div>
+                    <div id="mapping-chips-container" class="flex flex-col gap-4">
+                        <!-- Draggable item chips injected dynamically in JS -->
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5 text-center">
+                    <p class="text-xs text-white/50 leading-relaxed">
+                        <span class="ar">اسحب بطاقات المعالم من القائمة وأسقطها على الدوائر المناسبة على الخريطة.</span>
+                        <span class="en hidden">Drag landmark badges and release them over matching targets on the map.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ SCORE SUBMISSION SCREEN ═══════════════════════════════════════════ -->
+    <section id="screen-score-submit" class="screen-section bg-grid justify-center items-center">
+        <div class="glass-panel glass-panel-glow border-white/10 px-12 py-10 w-[700px] text-center flex flex-col items-center">
+            <i data-lucide="party-popper" class="w-16 h-16 text-gold mb-4 animate-bounce"></i>
+            <h1 class="text-3xl font-bold text-white mb-2">
+                <span class="ar">تهانينا! أكملت اللعبة!</span>
+                <span class="en hidden">Congratulations! Game Completed!</span>
+            </h1>
+            <p class="text-white/60 text-sm mb-6">
+                <span class="ar">لقد قمت بعمل رائع. يرجى إدخال اسمك لتسجيل نتيجتك في لوحة المتصدرين.</span>
+                <span class="en hidden">You did great. Please enter your name to register your high score.</span>
+            </p>
+
+            <!-- Metrics -->
+            <div class="grid grid-cols-2 gap-6 w-full max-w-md mb-8">
+                <div class="bg-white/5 rounded-xl border border-white/5 p-4">
+                    <span class="text-xs text-white/40 block mb-1 uppercase tracking-widest">
+                        <span class="ar">إجمالي النقاط</span><span class="en hidden">Total Points</span>
+                    </span>
+                    <span id="submit-score-value" class="text-3xl font-black text-gold leading-none">0</span>
+                </div>
+                <div class="bg-white/5 rounded-xl border border-white/5 p-4">
+                    <span class="text-xs text-white/40 block mb-1 uppercase tracking-widest">
+                        <span class="ar">الوقت المستغرق</span><span class="en hidden">Time Taken</span>
+                    </span>
+                    <span id="submit-time-value" class="text-3xl font-black text-white leading-none">0s</span>
+                </div>
+            </div>
+
+            <!-- Name Input Field -->
+            <div class="w-full max-w-md mb-6 relative">
+                <input type="text" id="submit-name-input" readonly placeholder="أدخل اسمك" class="w-full px-5 py-4 bg-white/5 border border-white/10 text-white rounded-xl text-center text-xl font-medium focus:outline-none focus:border-bahrain/50 placeholder-white/20 select-none">
+            </div>
+
+            <!-- Virtual Kiosk Touch Keyboard container -->
+            <div id="kiosk-keyboard" class="w-full max-w-lg mb-8 flex flex-col gap-2">
+                <!-- Rows populated by app.js based on language -->
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex gap-4 w-full max-w-md">
+                <button onclick="app.submitScore()" class="btn-primary flex-1 py-4 text-sm tracking-widest uppercase">
+                    <span class="ar">تسجيل النتيجة</span><span class="en hidden">Submit Score</span>
+                </button>
+                <button onclick="app.transitionTo('menu')" class="btn-secondary px-8 py-4 text-sm tracking-widest uppercase">
+                    <span class="ar">إلغاء</span><span class="en hidden">Cancel</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ LEADERBOARD BOARD ═══════════════════════════════════════════ -->
+    <section id="screen-leaderboard" class="screen-section bg-grid pt-[140px] px-16 justify-center items-center">
+        <div class="glass-panel border-white/5 w-[1000px] p-8 flex flex-col h-[820px] shadow-2xl relative overflow-hidden">
+            <!-- Tabs selection -->
+            <div class="flex items-center justify-between border-b border-white/5 pb-6 mb-8">
+                <div class="flex gap-3">
+                    <button id="tab-leaderboard-rakkiz" onclick="app.loadLeaderboard('rakkiz')" class="px-6 py-2.5 bg-bahrain/20 text-white border border-bahrain/30 rounded-xl text-sm font-semibold transition-all">
+                        <span class="ar">لعبة ركز</span><span class="en hidden">Spot the Difference</span>
+                    </button>
+                    <button id="tab-leaderboard-memory" onclick="app.loadLeaderboard('memory')" class="px-6 py-2.5 bg-white/5 text-white/50 rounded-xl text-sm font-semibold transition-all hover:bg-white/10">
+                        <span class="ar">بطاقات القيم</span><span class="en hidden">Memory Values</span>
+                    </button>
+                    <button id="tab-leaderboard-mapping" onclick="app.loadLeaderboard('mapping')" class="px-6 py-2.5 bg-white/5 text-white/50 rounded-xl text-sm font-semibold transition-all hover:bg-white/10">
+                        <span class="ar">معالم بحريننا</span><span class="en hidden">Landmark Mapping</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <i data-lucide="medal" class="w-6 h-6 text-gold"></i>
+                    <h1 class="text-xl font-bold text-white tracking-wide">
+                        <span class="ar">لوحة شرف المتصدرين</span><span class="en hidden">Scoreboard</span>
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Score Table scroll container -->
+            <div class="flex-1 overflow-y-auto mb-8 pr-2">
+                <table class="w-full text-right text-sm">
+                    <thead>
+                        <tr class="text-white/40 border-b border-white/5 pb-3">
+                            <th class="py-3 font-semibold px-4"><span class="ar">الترتيب</span><span class="en hidden">Rank</span></th>
+                            <th class="py-3 font-semibold px-4"><span class="ar">الاسم</span><span class="en hidden">Name</span></th>
+                            <th class="py-3 font-semibold px-4 text-center"><span class="ar">النقاط</span><span class="en hidden">Score</span></th>
+                            <th class="py-3 font-semibold px-4 text-center"><span class="ar">الوقت المستغرق</span><span class="en hidden">Time</span></th>
+                            <th class="py-3 font-semibold px-4 text-center"><span class="ar">المستوى</span><span class="en hidden">Difficulty</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-table-body" class="divide-y divide-white/5 text-white/80">
+                        <!-- Rows injected dynamically in JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Back navigation button -->
+            <div class="flex justify-center border-t border-white/5 pt-6">
+                <button onclick="app.transitionTo('menu')" class="btn-primary px-12 py-4 text-sm tracking-widest uppercase">
+                    <span class="ar">العودة للقائمة الرئيسية</span><span class="en hidden">Main Menu</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ COMMON OVERLAYS ═══════════════════════════════════════════ -->
+    
+    <!-- Educational Modal fact panel overlay -->
+    <div id="educational-modal" class="overlay-modal">
+        <div class="glass-panel glass-panel-glow border-white/10 px-10 py-8 w-[640px] text-center flex flex-col items-center relative overflow-hidden">
+            <span class="inline-block px-3 py-1 bg-gold/15 border border-gold/20 text-gold text-[10px] font-bold tracking-widest rounded-full mb-4 uppercase">
+                <span class="ar">معلومة إثرائية</span><span class="en hidden">Educational Fact</span>
+            </span>
+            
+            <h2 id="edu-modal-title" class="text-2xl font-bold text-white mb-4">
+                <!-- Landmark Title -->
+            </h2>
+            <div id="edu-modal-image-container" class="w-full h-[220px] rounded-xl border border-white/5 overflow-hidden mb-5">
+                <img id="edu-modal-img" src="" alt="Landmark" class="w-full h-full object-cover">
+            </div>
+            <p id="edu-modal-desc" class="text-white/70 text-sm leading-relaxed mb-6 px-4">
+                <!-- Landmark Description -->
+            </p>
+
+            <button onclick="app.closeEducationalModal()" class="btn-primary px-10 py-3.5 text-xs tracking-widest uppercase">
+                <span class="ar">متابعة اللعب</span><span class="en hidden">Continue</span>
             </button>
         </div>
     </div>
 
-    <!-- Main Document Wrapper -->
-    <main class="max-w-5xl mx-auto my-12 pt-16 print:my-0 print:pt-0">
-        <div class="bg-card shadow-2xl rounded-2xl overflow-hidden border border-border print:border-none print:shadow-none">
-            
-            <!-- ═══════════════════════════════════════════ PAGE 1 — COVER -->
-            <section class="p-12 md:p-20 relative overflow-hidden print:p-8 print:min-h-[297mm]">
-                <!-- Decorative Blur -->
-                <div class="absolute -top-40 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
-                <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-                <header class="flex justify-between items-center border-b border-border pb-6 fade-in-up" style="animation-delay: 0.1s;">
-                    <span class="text-xs font-bold tracking-widest text-muted-foreground uppercase">
-                        <span class="en">Project Proposal &middot; Bahrain Youth City</span>
-                        <span class="ar">مقترح مشروع &middot; مدينة شباب 2030</span>
-                    </span>
-                    <span class="text-xs font-bold text-primary tracking-widest">
-                        <span class="en">JUNE 2026</span>
-                        <span class="ar">يونيو 2026</span>
-                    </span>
-                </header>
-
-                <div class="py-24 fade-in-up" style="animation-delay: 0.2s;">
-                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold tracking-widest rounded-full mb-6">
-                        <span class="en">INTERACTIVE EDUCATIONAL PLATFORM</span>
-                        <span class="ar">منصة تعليمية تفاعلية</span>
-                    </span>
-                    
-                    <h1 class="text-6xl md:text-8xl font-light tracking-tight text-foreground mb-4 leading-tight">
-                        <span class="en block">Three Games.</span>
-                        <span class="en block font-semibold">One Platform.</span>
-                        <span class="ar block">ثلاث ألعاب.</span>
-                        <span class="ar block font-bold">منصة واحدة.</span>
-                    </h1>
-                    
-                    <p class="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                        <span class="en">A culturally immersive educational experience celebrating Bahrain's landmarks, national values, and geography — fully bilingual, instantly deployable, and built for public engagement at scale.</span>
-                        <span class="ar">تجربة تعليمية ثقافية غامرة تحتفي بمعالم مملكة البحرين، قيمها الوطنية، وجغرافيتها — ثنائية اللغة بالكامل، جاهزة للتشغيل الفوري، ومصممة للتفاعل الجماهيري واسع النطاق.</span>
-                    </p>
-
-                    <div class="mt-16 flex flex-wrap gap-12 items-center text-sm">
-                        <div>
-                            <p class="text-muted-foreground text-xs font-bold tracking-widest mb-1 uppercase">
-                                <span class="en">Prepared By</span><span class="ar">إعداد</span>
-                            </p>
-                            <p class="font-semibold text-foreground tracking-wider">DOYTECH</p>
-                        </div>
-                        <div class="w-px h-8 bg-border hidden md:block"></div>
-                        <div>
-                            <p class="text-muted-foreground text-xs font-bold tracking-widest mb-1 uppercase">
-                                <span class="en">Architect By</span><span class="ar">هندسة معمارية</span>
-                            </p>
-                            <p class="font-semibold text-foreground tracking-wider">DOY</p>
-                        </div>
-                        <div class="w-px h-8 bg-border hidden md:block"></div>
-                        <div>
-                            <p class="text-muted-foreground text-xs font-bold tracking-widest mb-1 uppercase">
-                                <span class="en">Date</span><span class="ar">التاريخ</span>
-                            </p>
-                            <p class="font-semibold text-foreground tracking-wider">
-                                <span class="en">JUNE 2026</span><span class="ar">يونيو 2026</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Bar -->
-                <div class="grid grid-cols-2 md:grid-cols-5 border-t border-border mt-12 pt-8 gap-y-8 fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="border-r border-border px-4">
-                        <div class="text-3xl font-light text-foreground mb-1">BD 1,200</div>
-                        <div class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                            <span class="en">Total Investment</span><span class="ar">إجمالي الاستثمار</span>
-                        </div>
-                    </div>
-                    <div class="border-r border-border px-4">
-                        <div class="text-3xl font-light text-foreground mb-1">3</div>
-                        <div class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                            <span class="en">Complete Games</span><span class="ar">ألعاب متكاملة</span>
-                        </div>
-                    </div>
-                    <div class="border-r border-border px-4">
-                        <div class="text-3xl font-light text-foreground mb-1">BD 400</div>
-                        <div class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                            <span class="en">Per Game</span><span class="ar">لكل لعبة</span>
-                        </div>
-                    </div>
-                    <div class="border-r border-border px-4">
-                        <div class="text-3xl font-light text-foreground mb-1">AR/EN</div>
-                        <div class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                            <span class="en">Bilingual</span><span class="ar">ثنائية اللغة</span>
-                        </div>
-                    </div>
-                    <div class="px-4">
-                        <div class="text-3xl font-light text-foreground mb-1">
-                            <span class="en">30 Days</span><span class="ar">٣٠ يوماً</span>
-                        </div>
-                        <div class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                            <span class="en">Tech Support</span><span class="ar">دعم فني</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ═══════════════════════════════════════════ PAGE 2 — GAME ONE -->
-            <section class="border-t border-border print-break">
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <!-- Left: Deliverables -->
-                    <div class="p-12 md:p-16 border-b md:border-b-0 md:border-r border-border flex flex-col justify-between">
-                        <div>
-                            <div class="text-[120px] font-extralight text-primary/10 leading-none -ml-2 -mt-6 mb-2">01</div>
-                            <h3 class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase mb-4">
-                                <span class="en">Game One &middot; Discovery</span><span class="ar">اللعبة الأولى &middot; اكتشاف</span>
-                            </h3>
-                            <h2 class="text-3xl font-medium text-foreground mb-2">
-                                <span class="en">Spot the Difference</span><span class="ar">لعبة ركز</span>
-                            </h2>
-                            <div class="w-16 h-1 bg-primary mb-8 rounded-full"></div>
-
-                            <h4 class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase mb-6">
-                                <span class="en">Deliverables</span><span class="ar">المخرجات</span>
-                            </h4>
-
-                            <ul class="space-y-4 text-sm text-muted-foreground">
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Two high-fidelity 3D scenes of a Bahrain landmark displayed side by side</span>
-                                    <span class="ar">مشهدان ثلاثيا الأبعاد عاليي الدقة لمعلم بحريني يعرضان جنباً إلى جنب</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">One hidden difference between scenes — player must identify it before time expires</span>
-                                    <span class="ar">اختلاف واحد مخفي بين المشهدين — يجب على اللاعب تحديده قبل انتهاء الوقت</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Five landmarks: Al-Fateh Mosque, Bahrain Fort, Bab Al Bahrain, F1 Circuit, King Fahd Causeway</span>
-                                    <span class="ar">خمسة معالم: جامع الفاتح، قلعة البحرين، باب البحرين، حلبة الفورمولا ١، جسر الملك فهد</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Easy mode: 60-second timer, 100 points per round | Hard mode: 45-second timer, 150 points</span>
-                                    <span class="ar">الوضع السهل: ٦٠ ثانية، ١٠٠ نقطة | الوضع الصعب: ٤٥ ثانية، ١٥٠ نقطة</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Immediate visual and score feedback on correct identification with persistent tracking</span>
-                                    <span class="ar">تغذية راجعة فورية بصرية وللنتائج عند التحديد الصحيح مع تتبع مستمر للنقاط</span>
-                                </li>
-                            </ul>
-
-                            <div class="mt-8 pt-6 border-t border-border flex items-center gap-2">
-                                <i data-lucide="info" class="w-4 h-4 text-muted-foreground"></i>
-                                <p class="text-xs italic text-muted-foreground">
-                                    <span class="en">Photography & visual assets supplied by GulfMarcom</span>
-                                    <span class="ar">الصور والأصول المرئية مزودة من قبل جلف ماركوم</span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="mt-12 pt-8 border-t border-border flex justify-between items-baseline">
-                            <span class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                                <span class="en">Game Value</span><span class="ar">قيمة اللعبة</span>
-                            </span>
-                            <span class="text-2xl font-medium text-foreground">BD 400.00</span>
-                        </div>
-                    </div>
-
-                    <!-- Right: Screenshot -->
-                    <div class="p-8 md:p-12 bg-muted/30 flex flex-col justify-center">
-                        <div class="relative group rounded-xl overflow-hidden shadow-2xl border border-border">
-                            <img src="http://googleusercontent.com/generated_image_content/0" alt="Spot the Difference Game" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <span class="text-white text-sm font-medium">
-                                    <span class="en">Real-time UI Render</span><span class="ar">عرض واجهة المستخدم في الوقت الفعلي</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ═══════════════════════════════════════════ PAGE 3 — GAME TWO -->
-            <section class="border-t border-border print-break">
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <!-- Left: Deliverables -->
-                    <div class="p-12 md:p-16 border-b md:border-b-0 md:border-r border-border flex flex-col justify-between order-1 md:order-2">
-                        <div>
-                            <div class="text-[120px] font-extralight text-primary/10 leading-none -ml-2 -mt-6 mb-2">02</div>
-                            <h3 class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase mb-4">
-                                <span class="en">Game Two &middot; Memory</span><span class="ar">اللعبة الثانية &middot; الذاكرة</span>
-                            </h3>
-                            <h2 class="text-3xl font-medium text-foreground mb-2">
-                                <span class="en">National Values Memory</span><span class="ar">بطاقات القيم الوطنية</span>
-                            </h2>
-                            <div class="w-16 h-1 bg-primary mb-8 rounded-full"></div>
-
-                            <h4 class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase mb-6">
-                                <span class="en">Deliverables</span><span class="ar">المخرجات</span>
-                            </h4>
-
-                            <ul class="space-y-4 text-sm text-muted-foreground">
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Interactive memory matching game featuring Bahrain's six national values</span>
-                                    <span class="ar">لعبة مطابقة تفاعلية للذاكرة تتضمن قيم البحرين الوطنية الست</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Eight national value pairs displayed across a 4 × 4 grid — 16 cards total</span>
-                                    <span class="ar">ثمانية أزواج من القيم الوطنية تعرض في شبكة ٤×٤ — ١٦ بطاقة إجمالاً</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Cards initially revealed face-up for 5 seconds for memorization</span>
-                                    <span class="ar">تكشف البطاقات في البداية لمدة ٥ ثوانٍ للحفظ قبل بدء اللعب</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">60-second countdown timer with live pair counter and cumulative score</span>
-                                    <span class="ar">مؤقت عد تنازلي لمدة ٦٠ ثانية مع عداد مباشر للأزواج ونقاط تراكمية</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Live session leaderboard showing top players, scores and completion times</span>
-                                    <span class="ar">لوحة صدارة مباشرة تظهر أفضل اللاعبين، النقاط، وأوقات الإنجاز</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mt-12 pt-8 border-t border-border flex justify-between items-baseline">
-                            <span class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                                <span class="en">Game Value</span><span class="ar">قيمة اللعبة</span>
-                            </span>
-                            <span class="text-2xl font-medium text-foreground">BD 400.00</span>
-                        </div>
-                    </div>
-
-                    <!-- Right: Screenshot -->
-                    <div class="p-8 md:p-12 bg-muted/30 flex flex-col justify-center order-2 md:order-1 border-r-0 md:border-r border-border">
-                        <div class="relative group rounded-xl overflow-hidden shadow-2xl border border-border">
-                            <img src="http://googleusercontent.com/generated_image_content/1" alt="National Values Memory Game" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <span class="text-white text-sm font-medium">
-                                    <span class="en">Real-time UI Render</span><span class="ar">عرض واجهة المستخدم في الوقت الفعلي</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ═══════════════════════════════════════════ PAGE 4 — GAME THREE -->
-            <section class="border-t border-border print-break">
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <!-- Left: Deliverables -->
-                    <div class="p-12 md:p-16 border-b md:border-b-0 md:border-r border-border flex flex-col justify-between">
-                        <div>
-                            <div class="text-[120px] font-extralight text-primary/10 leading-none -ml-2 -mt-6 mb-2">03</div>
-                            <h3 class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase mb-4">
-                                <span class="en">Game Three &middot; Geography</span><span class="ar">اللعبة الثالثة &middot; الجغرافيا</span>
-                            </h3>
-                            <h2 class="text-3xl font-medium text-foreground mb-2">
-                                <span class="en">Landmark Mapping</span><span class="ar">اكتشف معالم بحريننا</span>
-                            </h2>
-                            <div class="w-16 h-1 bg-primary mb-8 rounded-full"></div>
-
-                            <h4 class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase mb-6">
-                                <span class="en">Deliverables</span><span class="ar">المخرجات</span>
-                            </h4>
-
-                            <ul class="space-y-4 text-sm text-muted-foreground">
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Realistic interactive 3D map of Bahrain — accurate coastline, islands, and terrain</span>
-                                    <span class="ar">خريطة تفاعلية واقعية ثلاثية الأبعاد للبحرين — خط ساحلي دقيق، جزر، وتضاريس</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Full 3D perspective with atmospheric depth — ocean, lighting, and shadows</span>
-                                    <span class="ar">منظور ثلاثي الأبعاد بالكامل مع عمق جوي — إضاءة ديناميكية، ظلال، وتأثيرات مائية</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Player drags landmark chips and drops them onto geographically correct positions</span>
-                                    <span class="ar">يقوم اللاعب بسحب المعالم وإسقاطها في مواقعها الجغرافية الصحيحة</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Correct placements lock in with a glowing pin; incorrect placements return to panel</span>
-                                    <span class="ar">المواقع الصحيحة تثبت بمؤشر مضيء؛ الخاطئة تعود إلى اللوحة</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary shrink-0"></i>
-                                    <span class="en">Educational landmark fact revealed automatically upon each correct placement</span>
-                                    <span class="ar">معلومة تثقيفية عن المعلم تظهر تلقائياً عند كل وضع صحيح</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mt-12 pt-8 border-t border-border flex justify-between items-baseline">
-                            <span class="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                                <span class="en">Game Value</span><span class="ar">قيمة اللعبة</span>
-                            </span>
-                            <span class="text-2xl font-medium text-foreground">BD 400.00</span>
-                        </div>
-                    </div>
-
-                    <!-- Right: Screenshot -->
-                    <div class="p-8 md:p-12 bg-muted/30 flex flex-col justify-center">
-                        <div class="relative group rounded-xl overflow-hidden shadow-2xl border border-border">
-                            <img src="http://googleusercontent.com/generated_image_content/2" alt="Landmark Mapping Game" class="w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                <span class="text-white text-sm font-medium">
-                                    <span class="en">Real-time UI Render</span><span class="ar">عرض واجهة المستخدم في الوقت الفعلي</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ═══════════════════════════════════════════ PAGE 5 — INVESTMENT SUMMARY -->
-            <section class="border-t border-border p-12 md:p-20 bg-muted/10 print-break">
-                <div class="mb-12 text-center fade-in-up">
-                    <i data-lucide="pie-chart" class="w-12 h-12 text-primary mx-auto mb-4"></i>
-                    <h2 class="text-3xl font-light text-foreground">
-                        <span class="en">Investment Summary</span><span class="ar">ملخص الاستثمار</span>
-                    </h2>
-                </div>
-
-                <!-- Data Table -->
-                <div class="overflow-x-auto border border-border rounded-xl bg-card shadow-sm mb-12 fade-in-up" style="animation-delay: 0.1s;">
-                    <table class="w-full text-left text-sm text-foreground">
-                        <thead class="text-xs uppercase bg-muted/50 text-muted-foreground border-b border-border">
-                            <tr>
-                                <th class="px-6 py-4 font-bold tracking-widest text-start">
-                                    <span class="en">Deliverable</span><span class="ar">المخرج</span>
-                                </th>
-                                <th class="px-6 py-4 font-bold tracking-widest hidden md:table-cell text-start">
-                                    <span class="en">Description</span><span class="ar">الوصف</span>
-                                </th>
-                                <th class="px-6 py-4 font-bold tracking-widest text-end">
-                                    <span class="en">Value</span><span class="ar">القيمة</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-border">
-                            <tr class="hover:bg-muted/20 transition-colors">
-                                <td class="px-6 py-5 font-medium whitespace-nowrap text-start">
-                                    <span class="en">Game 1 — Spot the Difference</span><span class="ar">اللعبة الأولى — ركز</span>
-                                </td>
-                                <td class="px-6 py-5 text-muted-foreground hidden md:table-cell text-start">
-                                    <span class="en">Five landmarks, two difficulty modes, dynamic scoring & timers.</span>
-                                    <span class="ar">خمسة معالم، مستويان للصعوبة، تسجيل ديناميكي للنقاط ومؤقتات.</span>
-                                </td>
-                                <td class="px-6 py-5 text-end font-medium">BD 400.00</td>
-                            </tr>
-                            <tr class="hover:bg-muted/20 transition-colors">
-                                <td class="px-6 py-5 font-medium whitespace-nowrap text-start">
-                                    <span class="en">Game 2 — Memory Values</span><span class="ar">اللعبة الثانية — ذاكرة القيم</span>
-                                </td>
-                                <td class="px-6 py-5 text-muted-foreground hidden md:table-cell text-start">
-                                    <span class="en">16-card grid, live leaderboard, interactive card flip animations.</span>
-                                    <span class="ar">شبكة ١٦ بطاقة، لوحة صدارة مباشرة، تأثيرات قلب بطاقات تفاعلية.</span>
-                                </td>
-                                <td class="px-6 py-5 text-end font-medium">BD 400.00</td>
-                            </tr>
-                            <tr class="hover:bg-muted/20 transition-colors">
-                                <td class="px-6 py-5 font-medium whitespace-nowrap text-start">
-                                    <span class="en">Game 3 — Landmark Mapping</span><span class="ar">اللعبة الثالثة — خريطة المعالم</span>
-                                </td>
-                                <td class="px-6 py-5 text-muted-foreground hidden md:table-cell text-start">
-                                    <span class="en">3D interactive map, drag-and-drop mechanics, educational tooltips.</span>
-                                    <span class="ar">خريطة تفاعلية 3D، نظام سحب وإفلات، نوافذ تعليمية منبثقة.</span>
-                                </td>
-                                <td class="px-6 py-5 text-end font-medium">BD 400.00</td>
-                            </tr>
-                            <tr class="bg-primary/5 border-t-2 border-border">
-                                <td colspan="2" class="px-6 py-6 font-bold text-lg tracking-wider text-primary uppercase text-start">
-                                    <span class="en">Total Investment</span><span class="ar">إجمالي الاستثمار</span>
-                                </td>
-                                <td class="px-6 py-6 text-end text-xl font-bold text-primary">BD 1,200.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Platform Architecture (IT Context) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="bg-card p-6 rounded-xl border border-border">
-                        <i data-lucide="cpu" class="w-6 h-6 text-primary mb-4"></i>
-                        <h4 class="text-xs font-bold tracking-widest text-foreground uppercase mb-2">
-                            <span class="en">Performance Specs</span><span class="ar">مواصفات الأداء</span>
-                        </h4>
-                        <p class="text-sm text-muted-foreground">
-                            <span class="en">Hardware-accelerated rendering. Sub-2s payload load times. Smooth 60FPS animation lifecycle.</span>
-                            <span class="ar">تصيير مدعوم بالأجهزة. وقت تحميل أقل من ثانيتين. حركة سلسة بمعدل ٦٠ إطاراً في الثانية.</span>
-                        </p>
-                    </div>
-                    <div class="bg-card p-6 rounded-xl border border-border">
-                        <i data-lucide="globe" class="w-6 h-6 text-primary mb-4"></i>
-                        <h4 class="text-xs font-bold tracking-widest text-foreground uppercase mb-2">
-                            <span class="en">Localization</span><span class="ar">توطين النظام</span>
-                        </h4>
-                        <p class="text-sm text-muted-foreground">
-                            <span class="en">Native RTL support. Live DOM translation toggle for bilingual environments.</span>
-                            <span class="ar">دعم كامل لاتجاه اليمين لليسار. تبديل مباشر للنصوص لتلائم البيئات ثنائية اللغة.</span>
-                        </p>
-                    </div>
-                    <div class="bg-card p-6 rounded-xl border border-border">
-                        <i data-lucide="shield-check" class="w-6 h-6 text-primary mb-4"></i>
-                        <h4 class="text-xs font-bold tracking-widest text-foreground uppercase mb-2">
-                            <span class="en">Deployment</span><span class="ar">النشر والتشغيل</span>
-                        </h4>
-                        <p class="text-sm text-muted-foreground">
-                            <span class="en">Zero-dependency build. Works offline on edge devices, kiosks, and standard browsers.</span>
-                            <span class="ar">بنية خالية من التبعيات. تعمل بدون إنترنت على الأجهزة الطرفية والأكشاك.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Terms -->
-                <div class="border-t border-border pt-8 fade-in-up" style="animation-delay: 0.3s;">
-                    <h4 class="text-xs font-bold tracking-widest text-muted-foreground uppercase mb-6 text-center">
-                        <span class="en">Terms & Delivery</span><span class="ar">الشروط والتسليم</span>
-                    </h4>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                        <div>
-                            <div class="text-[10px] font-bold tracking-widest text-foreground mb-2"><span class="en">TIMELINE</span><span class="ar">الجدول الزمني</span></div>
-                            <p class="text-xs text-muted-foreground"><span class="en">Immediate install upon acceptance.</span><span class="ar">تثبيت فوري عند الموافقة.</span></p>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold tracking-widest text-foreground mb-2"><span class="en">DELIVERABLES</span><span class="ar">الاستلام</span></div>
-                            <p class="text-xs text-muted-foreground"><span class="en">App files, setup script & guide.</span><span class="ar">ملفات التطبيق وبرنامج الإعداد.</span></p>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold tracking-widest text-foreground mb-2"><span class="en">SUPPORT</span><span class="ar">الدعم الفني</span></div>
-                            <p class="text-xs text-muted-foreground"><span class="en">30 days technical support.</span><span class="ar">٣٠ يوماً من الدعم الفني مجاناً.</span></p>
-                        </div>
-                        <div>
-                            <div class="text-[10px] font-bold tracking-widest text-foreground mb-2"><span class="en">OWNERSHIP</span><span class="ar">الملكية</span></div>
-                            <p class="text-xs text-muted-foreground"><span class="en">Full transfer to client on payment.</span><span class="ar">نقل ملكية كامل للعميل.</span></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Footer -->
-        <footer class="mt-12 pb-12 text-center fade-in-up" style="animation-delay: 0.4s;">
-            <p class="text-sm font-medium text-foreground">Made with Love ❤️ in Bahrain 🇧🇭</p>
-            <p class="text-xs text-muted-foreground mt-2">DOYTECH &middot; Senior Broadcast IT Engineering Standards</p>
-        </footer>
-    </main>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Theme Toggle Logic
-        function toggleTheme() {
-            const html = document.documentElement;
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Language Toggle Logic
-        function toggleLanguage() {
-            const html = document.documentElement;
-            const currentLang = html.getAttribute('lang');
-            
-            if (currentLang === 'ar') {
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-                localStorage.setItem('lang', 'en');
-            } else {
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-                localStorage.setItem('lang', 'ar');
-            }
-        }
-
-        // Setup Init State
-        document.addEventListener('DOMContentLoaded', () => {
-            // Keep Dark Default as requested, unless overridden previously
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.documentElement.classList.remove('dark');
-            }
-            
-            // Keep Arabic Default as requested, unless overridden previously
-            const savedLang = localStorage.getItem('lang');
-            if (savedLang === 'en') {
-                document.documentElement.setAttribute('lang', 'en');
-                document.documentElement.setAttribute('dir', 'ltr');
-            }
-        });
-
-        // Intersection Observer for fade-in animations on scroll
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
-        });
-    </script>
+    <!-- Core App JS engine -->
+    <script src="app.js"></script>
 </body>
 </html>
