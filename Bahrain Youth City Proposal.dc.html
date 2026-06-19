@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0b0b10; }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 2px auto;
+    position: relative;
+    overflow: hidden;
+    background: #0b0b10;
+  }
+  .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: rgba(240,235,225,0.45);
+  }
+  .arabic {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #0b0b10; }
+    .page { margin: 0; page-break-after: always; break-after: page; width: 210mm; min-height: 297mm; }
+    .page:last-child { page-break-after: avoid; break-after: avoid; }
+  }
+</style>
+</helmet>
+
+<!-- ═══════════════════════════════════════════ PAGE 1 — COVER -->
+<div class="page" style="display:flex; flex-direction:column; padding:0; background:#0b0b10;">
+
+  <!-- top bar -->
+  <div style="padding:10mm 12mm; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center;">
+    <span class="label" style="letter-spacing:0.35em;">P R O J E C T &nbsp; P R O P O S A L &nbsp; · &nbsp; B A H R A I N &nbsp; Y O U T H &nbsp; C I T Y</span>
+    <span class="label" style="color:rgba(200,16,46,0.7);">JUNE 2026</span>
+  </div>
+
+  <!-- hero -->
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center; padding:14mm 12mm 10mm;">
+    <div style="margin-bottom:6mm;">
+      <span class="label" style="font-size:9px; letter-spacing:0.5em; color:rgba(200,16,46,0.85);">I N T E R A C T I V E &nbsp; &nbsp; E D U C A T I O N A L &nbsp; &nbsp; P L A T F O R M</span>
+    </div>
+    <div style="margin-bottom:4mm;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:52px; font-weight:300; color:#f0ebe1; line-height:1.05; letter-spacing:-0.01em;">Three Games.</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:52px; font-weight:300; color:#f0ebe1; line-height:1.05; letter-spacing:-0.01em;">One Platform.</div>
+    </div>
+    <div style="max-width:148mm; margin-top:7mm;">
+      <p style="font-family:'DM Sans',sans-serif; font-size:13.5px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.75;">A culturally immersive educational experience celebrating Bahrain's landmarks, national values and geography — fully bilingual, instantly deployable, built for public engagement at scale.</p>
+    </div>
+
+    <!-- attribution -->
+    <div style="display:flex; gap:8mm; margin-top:10mm; align-items:center;">
+      <div>
+        <div class="label" style="font-size:8px; margin-bottom:2px;">PREPARED BY</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; color:#f0ebe1; letter-spacing:0.08em;">DOYTECH</div>
+      </div>
+      <div style="width:1px; height:22px; background:rgba(255,255,255,0.12);"></div>
+      <div>
+        <div class="label" style="font-size:8px; margin-bottom:2px;">ARCHITECT BY</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; color:#f0ebe1; letter-spacing:0.08em;">DOY</div>
+      </div>
+      <div style="width:1px; height:22px; background:rgba(255,255,255,0.12);"></div>
+      <div>
+        <div class="label" style="font-size:8px; margin-bottom:2px;">DATE</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; color:#f0ebe1; letter-spacing:0.08em;">JUNE 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stats bar -->
+  <div style="border-top:1px solid rgba(255,255,255,0.07); display:grid; grid-template-columns:repeat(5,1fr);">
+    <div style="padding:7mm 8mm; border-right:1px solid rgba(255,255,255,0.07);">
+      <div style="font-family:'DM Sans',sans-serif; font-size:26px; font-weight:300; color:#f0ebe1; letter-spacing:-0.01em;">BD 1,200</div>
+      <div class="label" style="margin-top:3px; font-size:8.5px; letter-spacing:0.3em;">TOTAL INVESTMENT</div>
+    </div>
+    <div style="padding:7mm 8mm; border-right:1px solid rgba(255,255,255,0.07);">
+      <div style="font-family:'DM Sans',sans-serif; font-size:26px; font-weight:300; color:#f0ebe1; letter-spacing:-0.01em;">3</div>
+      <div class="label" style="margin-top:3px; font-size:8.5px; letter-spacing:0.3em;">COMPLETE GAMES</div>
+    </div>
+    <div style="padding:7mm 8mm; border-right:1px solid rgba(255,255,255,0.07);">
+      <div style="font-family:'DM Sans',sans-serif; font-size:26px; font-weight:300; color:#f0ebe1; letter-spacing:-0.01em;">BD 400</div>
+      <div class="label" style="margin-top:3px; font-size:8.5px; letter-spacing:0.3em;">PER GAME</div>
+    </div>
+    <div style="padding:7mm 8mm; border-right:1px solid rgba(255,255,255,0.07);">
+      <div style="font-family:'DM Sans',sans-serif; font-size:26px; font-weight:300; color:#f0ebe1; letter-spacing:-0.01em;">AR/EN</div>
+      <div class="label" style="margin-top:3px; font-size:8.5px; letter-spacing:0.3em;">BILINGUAL</div>
+    </div>
+    <div style="padding:7mm 8mm;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:26px; font-weight:300; color:#f0ebe1; letter-spacing:-0.01em;">30 days</div>
+      <div class="label" style="margin-top:3px; font-size:8.5px; letter-spacing:0.3em;">SUPPORT</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ PAGE 2 — GAME ONE -->
+<div class="page" style="display:grid; grid-template-columns:1fr 1fr; background:#0b0b10;">
+
+  <!-- left: deliverables -->
+  <div style="padding:11mm 10mm 11mm 12mm; border-right:1px solid rgba(255,255,255,0.07); display:flex; flex-direction:column;">
+
+    <!-- game badge -->
+    <div style="margin-bottom:auto;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:90px; font-weight:200; color:rgba(200,16,46,0.15); line-height:1; letter-spacing:-0.04em; margin-bottom:1mm;">01</div>
+      <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:2mm;">G A M E &nbsp; O N E &nbsp; · &nbsp; D I S C O V E R Y</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:22px; font-weight:400; color:#f0ebe1; margin-bottom:1.5mm;">Spot the Difference</div>
+      <div class="arabic" style="font-size:14px; font-weight:300; color:rgba(240,235,225,0.6); margin-bottom:8mm;">لعبة ركز</div>
+
+      <div style="width:28mm; height:1px; background:rgba(200,16,46,0.5); margin-bottom:6mm;"></div>
+
+      <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm; color:rgba(240,235,225,0.55);">D E L I V E R A B L E S</div>
+
+      <div style="display:flex; flex-direction:column; gap:3mm;">
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Two high-fidelity 3D scenes of a Bahrain landmark displayed side by side</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">One hidden difference between scenes — player must identify it before time expires</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Five Bahrain landmarks: Al-Fateh Mosque, Bahrain Fort, Bahrain Gate, Formula 1 Circuit, King Fahd Causeway</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Easy mode: 60-second timer, 100 points per round</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Hard mode: 45-second timer, 150 points per round</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Immediate visual and score feedback on correct identification</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Educational landmark description shown after each round</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Persistent score tracking across sessions</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Fully bilingual Arabic and English with RTL support</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Optimised for touchscreen kiosk, tablet and desktop</p>
+        </div>
+      </div>
+
+      <div style="margin-top:5mm; padding-top:5mm; border-top:1px solid rgba(255,255,255,0.07);">
+        <p style="font-family:'DM Sans',sans-serif; font-size:10.5px; font-style:italic; font-weight:300; color:rgba(240,235,225,0.4); line-height:1.5;">All photography and visual assets designed and supplied by GulfMarcom</p>
+      </div>
+    </div>
+
+    <!-- game value -->
+    <div style="margin-top:6mm; padding-top:5mm; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:baseline;">
+      <div class="label" style="font-size:9px; letter-spacing:0.35em;">G A M E &nbsp; V A L U E</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; color:#f0ebe1; letter-spacing:0.04em;">BD 400.00</div>
+    </div>
+  </div>
+
+  <!-- right: screenshot -->
+  <div style="display:flex; flex-direction:column; padding:11mm 12mm 11mm 10mm;">
+    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm; color:rgba(240,235,225,0.45);">I N - G A M E &nbsp; S C R E E N S H O T</div>
+    <div style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:2px; display:flex; align-items:center; justify-content:center; min-height:160mm;">
+      <div style="text-align:center;">
+        <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.2); letter-spacing:0.15em; text-transform:uppercase;">Screenshot</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ PAGE 3 — GAME TWO -->
+<div class="page" style="display:grid; grid-template-columns:1fr 1fr; background:#0b0b10;">
+
+  <!-- left: deliverables -->
+  <div style="padding:11mm 10mm 11mm 12mm; border-right:1px solid rgba(255,255,255,0.07); display:flex; flex-direction:column;">
+    <div style="margin-bottom:auto;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:90px; font-weight:200; color:rgba(200,16,46,0.15); line-height:1; letter-spacing:-0.04em; margin-bottom:1mm;">02</div>
+      <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:2mm;">G A M E &nbsp; T W O &nbsp; · &nbsp; M E M O R Y</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:22px; font-weight:400; color:#f0ebe1; margin-bottom:1.5mm;">National Values Memory</div>
+      <div class="arabic" style="font-size:14px; font-weight:300; color:rgba(240,235,225,0.6); margin-bottom:8mm;">بطاقات القيم الوطنية</div>
+
+      <div style="width:28mm; height:1px; background:rgba(200,16,46,0.5); margin-bottom:6mm;"></div>
+
+      <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm; color:rgba(240,235,225,0.55);">D E L I V E R A B L E S</div>
+
+      <div style="display:flex; flex-direction:column; gap:3mm;">
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Interactive memory matching game featuring Bahrain's six national values</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Cards revealed face-up for 5 seconds, then flipped — player matches pairs from memory</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Eight national value pairs displayed across a 4 × 4 grid — 16 cards total</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">60-second countdown timer with live pair counter and cumulative score</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Live session leaderboard showing top players, scores and completion times</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Animated card flip with immediate match confirmation and mismatch reset</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Each card displays a GulfMarcom-designed image with Arabic and English label</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Cards revealed for 5 seconds at game start — memorise before play begins</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Score accumulation across rounds; leaderboard updated in real time</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Fully bilingual Arabic and English with RTL support</p>
+        </div>
+      </div>
+
+      <div style="margin-top:5mm; padding-top:5mm; border-top:1px solid rgba(255,255,255,0.07);">
+        <p style="font-family:'DM Sans',sans-serif; font-size:10.5px; font-style:italic; font-weight:300; color:rgba(240,235,225,0.4); line-height:1.5;">Card imagery designed and supplied by GulfMarcom</p>
+      </div>
+    </div>
+
+    <div style="margin-top:6mm; padding-top:5mm; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:baseline;">
+      <div class="label" style="font-size:9px; letter-spacing:0.35em;">G A M E &nbsp; V A L U E</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; color:#f0ebe1; letter-spacing:0.04em;">BD 400.00</div>
+    </div>
+  </div>
+
+  <!-- right: screenshot -->
+  <div style="display:flex; flex-direction:column; padding:11mm 12mm 11mm 10mm;">
+    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm; color:rgba(240,235,225,0.45);">I N - G A M E &nbsp; S C R E E N S H O T</div>
+    <div style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:2px; display:flex; align-items:center; justify-content:center; min-height:160mm;">
+      <div style="text-align:center;">
+        <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.2); letter-spacing:0.15em; text-transform:uppercase;">Screenshot</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ PAGE 4 — GAME THREE -->
+<div class="page" style="display:grid; grid-template-columns:1fr 1fr; background:#0b0b10;">
+
+  <!-- left: deliverables -->
+  <div style="padding:11mm 10mm 11mm 12mm; border-right:1px solid rgba(255,255,255,0.07); display:flex; flex-direction:column;">
+    <div style="margin-bottom:auto;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:90px; font-weight:200; color:rgba(200,16,46,0.15); line-height:1; letter-spacing:-0.04em; margin-bottom:1mm;">03</div>
+      <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:2mm;">G A M E &nbsp; T H R E E &nbsp; · &nbsp; G E O G R A P H Y</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:22px; font-weight:400; color:#f0ebe1; margin-bottom:1.5mm;">Landmark Mapping</div>
+      <div class="arabic" style="font-size:14px; font-weight:300; color:rgba(240,235,225,0.6); margin-bottom:8mm;">اكتشف معالم بحريننا</div>
+
+      <div style="width:28mm; height:1px; background:rgba(200,16,46,0.5); margin-bottom:6mm;"></div>
+
+      <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm; color:rgba(240,235,225,0.55);">D E L I V E R A B L E S</div>
+
+      <div style="display:flex; flex-direction:column; gap:3mm;">
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Realistic interactive 3D map of Bahrain — accurate coastline, islands, causeway and terrain</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Full 3D perspective with atmospheric depth — ocean, lighting, shadow and coordinate overlay</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Player drags landmark chips from the panel and drops onto the geographically correct position</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Correct placements lock in gold with a glowing pin; incorrect placements flash and return</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Easy mode: 3 landmarks, 100 points each</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Hard mode: 5 landmarks, 150 points each</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">120-second countdown timer</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Five landmarks: Bahrain Fort, Al-Fateh Mosque, Bahrain Gate, Formula 1 Circuit, King Fahd Causeway</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Educational landmark fact revealed on each correct placement</p>
+        </div>
+        <div style="display:flex; gap:3mm; align-items:baseline;">
+          <div style="width:4px; height:4px; border-radius:50%; background:#c8102e; flex-shrink:0; margin-top:1mm;"></div>
+          <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.78); line-height:1.6;">Fully bilingual Arabic and English with RTL support</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:6mm; padding-top:5mm; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:baseline;">
+      <div class="label" style="font-size:9px; letter-spacing:0.35em;">G A M E &nbsp; V A L U E</div>
+      <div style="font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; color:#f0ebe1; letter-spacing:0.04em;">BD 400.00</div>
+    </div>
+  </div>
+
+  <!-- right: screenshot -->
+  <div style="display:flex; flex-direction:column; padding:11mm 12mm 11mm 10mm;">
+    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm; color:rgba(240,235,225,0.45);">I N - G A M E &nbsp; S C R E E N S H O T</div>
+    <div style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:2px; display:flex; align-items:center; justify-content:center; min-height:160mm;">
+      <div style="text-align:center;">
+        <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.2); letter-spacing:0.15em; text-transform:uppercase;">Screenshot</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ PAGE 5 — INVESTMENT SUMMARY -->
+<div class="page" style="padding:11mm 12mm; display:flex; flex-direction:column; background:#0b0b10;">
+
+  <div class="label" style="font-size:9px; letter-spacing:0.45em; margin-bottom:7mm;">I N V E S T M E N T &nbsp; S U M M A R Y</div>
+
+  <!-- table -->
+  <table style="width:100%; border-collapse:collapse; margin-bottom:8mm;">
+    <thead>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.12);">
+        <th style="font-family:'DM Sans',sans-serif; font-size:9px; font-weight:500; color:rgba(240,235,225,0.4); letter-spacing:0.35em; text-align:left; padding:0 0 3mm 0; text-transform:uppercase;">D E L I V E R A B L E</th>
+        <th style="font-family:'DM Sans',sans-serif; font-size:9px; font-weight:500; color:rgba(240,235,225,0.4); letter-spacing:0.35em; text-align:left; padding:0 0 3mm 4mm; text-transform:uppercase;">D E S C R I P T I O N</th>
+        <th style="font-family:'DM Sans',sans-serif; font-size:9px; font-weight:500; color:rgba(240,235,225,0.4); letter-spacing:0.35em; text-align:right; padding:0 0 3mm 0; text-transform:uppercase;">V A L U E</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; color:#f0ebe1; padding:4mm 0; white-space:nowrap;">Game 1 — Spot the Difference</td>
+        <td style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.6); padding:4mm 0 4mm 4mm; line-height:1.55;">Five Bahrain landmarks, GulfMarcom assets, two difficulty modes, score tracking</td>
+        <td style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; color:#f0ebe1; padding:4mm 0; text-align:right; white-space:nowrap;">BD 400.00</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; color:#f0ebe1; padding:4mm 0; white-space:nowrap;">Game 2 — National Values Memory</td>
+        <td style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.6); padding:4mm 0 4mm 4mm; line-height:1.55;">16-card grid (8 pairs), 60-second timer, live leaderboard, GulfMarcom card imagery</td>
+        <td style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; color:#f0ebe1; padding:4mm 0; text-align:right; white-space:nowrap;">BD 400.00</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; color:#f0ebe1; padding:4mm 0; white-space:nowrap;">Game 3 — Landmark Mapping</td>
+        <td style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.6); padding:4mm 0 4mm 4mm; line-height:1.55;">Realistic interactive 3D Bahrain map, drag-and-drop placement, 3–5 landmarks, 120-second timer</td>
+        <td style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:400; color:#f0ebe1; padding:4mm 0; text-align:right; white-space:nowrap;">BD 400.00</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:#f0ebe1; padding:5mm 0 2mm 0; letter-spacing:0.08em; text-transform:uppercase;">TOTAL</td>
+        <td style="font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; color:#f0ebe1; padding:5mm 0 2mm 0; text-align:right; letter-spacing:0.04em;">BD 1,200.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- platform specs grid -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid rgba(255,255,255,0.07); margin-bottom:7mm;">
+    <div style="padding:5mm 6mm; border-right:1px solid rgba(255,255,255,0.07); border-bottom:1px solid rgba(255,255,255,0.07);">
+      <div class="label" style="font-size:8.5px; letter-spacing:0.35em; margin-bottom:2.5mm;">P L A T F O R M &nbsp; L A N G U A G E S</div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.75); line-height:1.6;">Fully bilingual Arabic and English. Right-to-left layout throughout.</p>
+    </div>
+    <div style="padding:5mm 6mm; border-right:1px solid rgba(255,255,255,0.07); border-bottom:1px solid rgba(255,255,255,0.07);">
+      <div class="label" style="font-size:8.5px; letter-spacing:0.35em; margin-bottom:2.5mm;">D E V I C E S</div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.75); line-height:1.6;">Touchscreen kiosks, tablets and desktops. All modern browsers.</p>
+    </div>
+    <div style="padding:5mm 6mm; border-bottom:1px solid rgba(255,255,255,0.07);">
+      <div class="label" style="font-size:8.5px; letter-spacing:0.35em; margin-bottom:2.5mm;">V I S U A L S</div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.75); line-height:1.6;">Real-time 3D graphics with dynamic lighting, shadows and effects.</p>
+    </div>
+    <div style="padding:5mm 6mm; border-right:1px solid rgba(255,255,255,0.07);">
+      <div class="label" style="font-size:8.5px; letter-spacing:0.35em; margin-bottom:2.5mm;">P E R F O R M A N C E</div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.75); line-height:1.6;">Under 2 seconds to load. Smooth 60-frame animation. Low resource use.</p>
+    </div>
+    <div style="padding:5mm 6mm; border-right:1px solid rgba(255,255,255,0.07);">
+      <div class="label" style="font-size:8.5px; letter-spacing:0.35em; margin-bottom:2.5mm;">S C O R I N G</div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.75); line-height:1.6;">Persistent score and session history stored on the host device.</p>
+    </div>
+    <div style="padding:5mm 6mm;">
+      <div class="label" style="font-size:8.5px; letter-spacing:0.35em; margin-bottom:2.5mm;">A C C E S S I B I L I T Y</div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11.5px; font-weight:300; color:rgba(240,235,225,0.75); line-height:1.6;">WCAG 2.1 AA compliant. Keyboard and screen reader support.</p>
+    </div>
+  </div>
+
+  <!-- terms -->
+  <div style="border-top:1px solid rgba(255,255,255,0.07); padding-top:5mm; margin-bottom:auto;">
+    <div class="label" style="font-size:9px; letter-spacing:0.4em; margin-bottom:4mm;">T E R M S &nbsp; &amp; &nbsp; D E L I V E R Y</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4mm;">
+      <div>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">T I M E L I N E</div>
+        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">Ready for immediate installation upon acceptance.</p>
+      </div>
+      <div>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">D E L I V E R A B L E S</div>
+        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">Complete application, installation guide and setup script.</p>
+      </div>
+      <div>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">S U P P O R T</div>
+        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">30 days of technical support after installation at no extra cost.</p>
+      </div>
+      <div>
+        <div class="label" style="font-size:8px; letter-spacing:0.3em; margin-bottom:2mm; color:rgba(240,235,225,0.4);">O W N E R S H I P</div>
+        <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.7); line-height:1.55;">All files transfer fully to the client upon payment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="margin-top:7mm; padding-top:5mm; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; align-items:center;">
+    <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.4);">Bahrain Youth City · Interactive Educational Games</span>
+    <span style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:300; color:rgba(240,235,225,0.4);">Made with Love in Bahrain 🇧🇭 · Architect By Doy · June 2026</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

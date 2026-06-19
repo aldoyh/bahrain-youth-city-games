@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth City 2026 - Wireframes (1920x1080)</title>
+    <style>
+        :root {
+            --wf-bg: #e2e8f0;
+            --wf-border: #4a5568;
+            --wf-text: #2d3748;
+            --wf-accent: #3182ce;
+            --wf-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #cbd5e0;
+            margin: 0;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .screen {
+            width: 1920px;
+            height: 1080px;
+            background-color: var(--wf-white);
+            border: 4px solid var(--wf-border);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .screen-title-banner {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #e53e3e;
+            color: white;
+            padding: 5px 20px;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        /* Layout Helpers */
+        .wireframe-box {
+            border: 2px dashed var(--wf-border);
+            background-color: var(--wf-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            color: var(--wf-text);
+        }
+
+        .wireframe-box h2 {
+            margin: 0 0 10px 0;
+            color: var(--wf-accent);
+        }
+
+        .wireframe-box p {
+            margin: 5px 0;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .specs {
+            font-family: monospace;
+            background: #2d3748;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+
+        /* Common Header */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 150px;
+            border-bottom: 2px solid var(--wf-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        /* Screen 1: Main Menu */
+        .menu-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            padding-top: 250px;
+            justify-content: center;
+            gap: 50px;
+            background: linear-gradient(135deg, #f7fafc, #e2e8f0);
+        }
+
+        .game-card {
+            width: 450px;
+            height: 600px;
+        }
+
+        .menu-header {
+            position: absolute;
+            top: 80px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Screen 2: Spot the Difference */
+        .spot-container {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 1920px;
+            height: 930px;
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .image-panel {
+            width: 880px;
+            height: 850px;
+            position: relative;
+        }
+
+        .hotspot {
+            position: absolute;
+            top: 60%;
+            left: 30%;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #e53e3e;
+            border-radius: 50%;
+            background: rgba(229, 62, 62, 0.2);
+        }
+
+        /* Screen 3: Memory Game */
+        .memory-container {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 1920px;
+            height: 930px;
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .grid-panel {
+            width: 1300px;
+            height: 850px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .memory-card {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        .leaderboard-panel {
+            width: 500px;
+            height: 850px;
+        }
+
+        /* Screen 4: Landmark Mapping */
+        .map-container {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 1920px;
+            height: 930px;
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .map-area {
+            width: 1400px;
+            height: 850px;
+            position: relative;
+        }
+
+        .drop-zone {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 3px dashed var(--wf-accent);
+            border-radius: 50%;
+            background: rgba(49, 130, 206, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .inventory-area {
+            width: 400px;
+            height: 850px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .draggable-icon {
+            width: 100%;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="position: relative;">
+        <div class="screen-title-banner">Screen 1: Main Menu Selection | Resolution: 1920x1080</div>
+        <div class="screen" id="main-menu">
+            <div class="menu-header">
+                <h1 style="font-size: 48px; color: var(--wf-text);">مدينة الشباب 2026 - منصة الألعاب التفاعلية</h1>
+                <p style="font-size: 24px;">Design Note: Centralized logo placement. High contrast background suitable
+                    for kiosk displays.</p>
+            </div>
+            <div class="menu-container">
+                <div class="wireframe-box game-card">
+                    <h2>لعبة ركّز</h2>
+                    <p>Spot the Difference Game</p>
+                    <p>Thumbnail Image Area</p>
+                    <span class="specs">Width: 450px | Height: 600px</span>
+                    <button style="margin-top: 20px; padding: 15px 30px; font-size: 20px;">Play Now</button>
+                </div>
+                <div class="wireframe-box game-card">
+                    <h2>بطاقات القيم الوطنية</h2>
+                    <p>National Values Memory</p>
+                    <p>Thumbnail Image Area</p>
+                    <span class="specs">Width: 450px | Height: 600px</span>
+                    <button style="margin-top: 20px; padding: 15px 30px; font-size: 20px;">Play Now</button>
+                </div>
+                <div class="wireframe-box game-card">
+                    <h2>اكتشف معالم بحريننا</h2>
+                    <p>Landmark Mapping</p>
+                    <p>Thumbnail Image Area</p>
+                    <span class="specs">Width: 450px | Height: 600px</span>
+                    <button style="margin-top: 20px; padding: 15px 30px; font-size: 20px;">Play Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: relative;">
+        <div class="screen-title-banner">Screen 2: Spot the Difference (لعبة ركز) | Resolution: 1920x1080</div>
+        <div class="screen" id="game-1">
+            <div class="wireframe-box header">
+                <div style="font-size: 32px; font-weight: bold;">النتيجة: 100 (Score)</div>
+                <div style="font-size: 48px; font-weight: bold; color: #e53e3e;">الوقت: 45 ثانية (Timer)</div>
+                <div
+                    style="width: 150px; height: 60px; border: 2px solid #000; display:flex; align-items:center; justify-content:center;">
+                    خروج (Exit)</div>
+            </div>
+
+            <div class="spot-container">
+                <div class="wireframe-box image-panel">
+                    <h2>الصورة المعدلة (Modified Image)</h2>
+                    <p>Design Note: This panel holds the image containing the hidden mistake. Must be touch-optimized.
+                    </p>
+                    <span class="specs">Width: 880px | Height: 850px</span>
+                    <div class="hotspot">
+                        <span
+                            style="position:absolute; top:-30px; width:150px; right:-35px; color:#e53e3e; font-weight:bold;">Hidden
+                            Error (Touch Target)</span>
+                    </div>
+                </div>
+
+                <div class="wireframe-box image-panel">
+                    <h2>الصورة الأصلية (Original Image)</h2>
+                    <p>Design Note: Reference image of the Bahraini landmark.</p>
+                    <span class="specs">Width: 880px | Height: 850px</span>
+                </div>
+            </div>
+
+            <div class="wireframe-box"
+                style="position: absolute; top: 340px; left: 560px; width: 800px; height: 400px; background: rgba(255,255,255,0.95); z-index: 10; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                <h2>معلومة إثرائية (Educational Info)</h2>
+                <p>Design Note: Modal popup triggered upon successful detection. Must have high-res typography and exit
+                    button.</p>
+                <span class="specs">Width: 800px | Height: 400px | Z-Index: Top</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: relative;">
+        <div class="screen-title-banner">Screen 3: National Values Memory (لعبة بطاقات القيم الوطنية) | Resolution:
+            1920x1080</div>
+        <div class="screen" id="game-2">
+            <div class="wireframe-box header">
+                <div style="font-size: 32px; font-weight: bold;">الأزواج المكتشفة: 4/8 (Pairs)</div>
+                <div style="font-size: 48px; font-weight: bold; color: #e53e3e;">الوقت: 60 ثانية (Timer)</div>
+                <div
+                    style="width: 150px; height: 60px; border: 2px solid #000; display:flex; align-items:center; justify-content:center;">
+                    خروج (Exit)</div>
+            </div>
+
+            <div class="memory-container">
+                <div class="grid-panel">
+                    <script>
+                        for (let i = 1; i <= 16; i++) {
+                            document.write(`
+                                <div class="wireframe-box memory-card">
+                                    <h3>Card ${i}</h3>
+                                    <p>Design Note: Front/Back flip animation container. Values like Tolerance & Coexistence.</p>
+                                    <span class="specs">Approx. 310x200px</span>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+
+                <div class="wireframe-box leaderboard-panel">
+                    <h2>لوحة المتصدرين (Live Leaderboard)</h2>
+                    <p>Design Note: Real-time update sidebar showing top players and their completion times.</p>
+                    <span class="specs">Width: 500px | Height: 850px</span>
+                    <ul style="text-align: right; width: 80%; margin-top: 30px; font-size: 20px; line-height: 2;">
+                        <li>1. Player A - 45s</li>
+                        <li>2. Player B - 50s</li>
+                        <li>3. Player C - 55s</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: relative;">
+        <div class="screen-title-banner">Screen 4: Landmark Mapping (اكتشف معالم بحريننا) | Resolution: 1920x1080</div>
+        <div class="screen" id="game-3">
+            <div class="wireframe-box header">
+                <div style="font-size: 32px; font-weight: bold;">المعالم: 2/10 (Progress)</div>
+                <div style="font-size: 48px; font-weight: bold; color: #e53e3e;">الوقت: 120 ثانية (Timer)</div>
+                <div
+                    style="width: 150px; height: 60px; border: 2px solid #000; display:flex; align-items:center; justify-content:center;">
+                    خروج (Exit)</div>
+            </div>
+
+            <div class="map-container">
+                <div class="wireframe-box map-area">
+                    <h1 style="color: rgba(0,0,0,0.2); font-size: 100px;">خريطة البحرين (Bahrain Map Background)</h1>
+                    <p style="font-size: 20px;">Design Note: High-res empty map canvas. The Drop Zones below are
+                        absolute positioned over exact geographical locations.</p>
+                    <span class="specs">Width: 1400px | Height: 850px | Touch-Action: None</span>
+
+                    <div class="drop-zone" style="top: 20%; left: 50%;">Drop Zone 1<br>(Muharraq)</div>
+                    <div class="drop-zone" style="top: 35%; left: 45%;">Drop Zone 2<br>(Manama)</div>
+                    <div class="drop-zone" style="top: 70%; left: 40%;">Drop Zone 3<br>(Sakhir)</div>
+                </div>
+
+                <div class="wireframe-box inventory-area">
+                    <h2>المعالم (Landmarks)</h2>
+                    <p>Design Note: Draggable icons using Pointer Events.</p>
+                    <span class="specs">Width: 400px | Height: 850px</span>
+
+                    <div class="wireframe-box draggable-icon">Icon: Bahrain Fort</div>
+                    <div class="wireframe-box draggable-icon">Icon: F1 Circuit</div>
+                    <div class="wireframe-box draggable-icon">Icon: Bab Al Bahrain</div>
+                    <div class="wireframe-box draggable-icon">Icon: Al-Fateh Mosque</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
