@@ -7,9 +7,7 @@ const path = require('path');
 
   const files = [
     { html: 'PROPOSAL.html', pdf: 'Proposal.pdf' },
-    { html: 'PROPOSAL_ar.html', pdf: 'Arabic_Proposal.pdf' },
-    { html: 'PROPOSAL_light.html', pdf: 'Proposal_Light.pdf' },
-    { html: 'PROPOSAL_ar_light.html', pdf: 'Arabic_Proposal_Light.pdf' }
+    { html: 'PROPOSAL_ar.html', pdf: 'Arabic_Proposal.pdf' }
   ];
 
   for (const file of files) {
