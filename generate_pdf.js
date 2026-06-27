@@ -1,24 +1,37 @@
 const { chromium } = require('/Users/aldoyh/.npm/_npx/9833c18b2d85bc59/node_modules/playwright');
+const path = require('path');
 
 (async () => {
-  const executablePath = `${process.env.HOME}/Library/Caches/ms-playwright/chromium-1228/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing`;
-  const browser = await chromium.launch({ executablePath });
+  const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  await page.goto('http://localhost:9876/PROPOSAL_ar.html', {
-    waitUntil: 'networkidle',
-    timeout: 30000,
-  });
+  const files = [
+    { html: 'PROPOSAL.html', pdf: 'Proposal.pdf' },
+    { html: 'PROPOSAL_ar.html', pdf: 'Arabic_Proposal.pdf' },
+    { html: 'PROPOSAL_light.html', pdf: 'Proposal_Light.pdf' },
+    { html: 'PROPOSAL_ar_light.html', pdf: 'Arabic_Proposal_Light.pdf' }
+  ];
 
-  await page.evaluate(() => document.fonts.ready);
+  for (const file of files) {
+    const fileUrl = `file://${path.resolve(__dirname, file.html)}`;
+    console.log(`Navigating to ${fileUrl}...`);
+    await page.goto(fileUrl, {
+      waitUntil: 'networkidle',
+      timeout: 30000,
+    });
 
-  await page.pdf({
-    path: 'Arabic_Proposal.pdf',
-    format: 'A4',
-    printBackground: true,
-    margin: { top: 0, right: 0, bottom: 0, left: 0 },
-  });
+    await page.evaluate(() => document.fonts.ready);
+
+    console.log(`Generating ${file.pdf}...`);
+    await page.pdf({
+      path: file.pdf,
+      format: 'A4',
+      printBackground: true,
+      margin: { top: 0, right: 0, bottom: 0, left: 0 },
+    });
+    console.log(`PDF generated: ${file.pdf}`);
+  }
 
   await browser.close();
-  console.log('PDF generated: Arabic_Proposal.pdf');
+  console.log('All PDFs generated successfully.');
 })();
